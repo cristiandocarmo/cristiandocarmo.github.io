@@ -1,0 +1,842 @@
+<!doctype html>
+	<html>
+
+<style >
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+html{
+  margin:0;
+  height:120%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+
+}
+
+.leyenda {
+    text-align: center;
+	color: #bbbbbb;
+	padding-bottom: 30px;
+}
+
+
+a:-webkit-any-link{
+text-decoration:none !important;
+}
+
+h1{
+	color: #ffffff;
+	font-size: 4em;
+	text-shadow: 0px 2px 28px #000000;
+}
+
+h2{
+	padding-top:4%;
+	text-align: center;
+	color: #303030;
+}
+
+.h2texto{
+	font-size: 1.5em;
+	text-align: justify;
+	color: #303030;
+	padding-bottom:30px;
+}
+
+body{
+  margin:0;
+  height:120%;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:50vw;
+  min-height:400px;
+  max-height:550px;
+  min-width:300px;
+  color:#eee;
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:40%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+  background:#1B2030 url(https://cdn.pixabay.com/photo/2018/05/18/10/25/trees-3410836_960_720.jpg) top center no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  animation: grow 60s  linear 10ms infinite;
+  transition:all 0.2s ease-in-out;
+  z-index:-2
+}
+.header a{
+  color:#eee
+}
+.menu{
+  display:block;
+  width:30px;
+  height:30px;
+  border:2px solid #fff;
+  border-radius:3px;
+  position:absolute;
+  right:20px;
+  top:20px;
+  text-decoration:none
+}
+.menu:after{
+  content:"";
+  display:block;
+  width:20px;
+  height:3px;
+  background:#fff;
+  position:absolute;
+  margin:0 auto;
+  top:5px;
+  left:0;
+  right:0;
+  box-shadow:0 8px, 0 16px
+}
+.logo{
+  border:2px solid #fff;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  margin:20px;
+  padding:5px 10px;
+  font-weight:600;
+  font-size:1.2em;
+  box-sizing:border-box
+}
+.sides, .info{
+  flex: 0 0 auto;
+  width:50%;
+}
+.sides{
+  visibility: hidden;
+}
+.info{
+  width:100%;
+  padding:5% 10% 0 10%;
+  text-align:center;
+  text-shadow:0 2px 3px rgba(0,0,0,0.2)
+}
+.author{
+  display:inline-block;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:url(https://secure.gravatar.com/avatar/9e866de0682cd0507140792d1f7172ae?s=210&d=mm&r=g) center no-repeat;
+  background-size:cover;
+  box-shadow:0 2px 3px rgba(0,0,0,0.3);
+  margin-bottom:3px
+}
+.info h4, .meta{
+  font-size:0.7em
+}
+.meta{
+  font-style:italic;
+}
+@keyframes grow{
+  0% { transform:scale(1)}
+  50% { transform:scale(1.2)}
+}
+.content{  
+  padding:4% 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: -8%;
+  margin-bottom: 5%;
+  background-color: #ffffff;
+  text-align:justify;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.btn{
+  color:#333;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-weight:600
+}
+
+.twtr{
+  margin-top:100px
+}.btn.twtr:after{content:"\1F426";padding-left:5px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*——————————————
+Global
+———————————————*/
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+/*——————————————
+TimeLine CSS
+———————————————*/
+/* Base */
+
+#content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+section.timeline-outer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1.header {
+  font-size: 50px;
+  line-height: 70px;
+}
+/* Timeline */
+
+.timeline {
+  border-left: 8px solid #8862ff;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #333;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  padding: 20px;
+  list-style: none;
+  text-align: left;
+}
+
+.timeline h1,
+.timeline h2,
+.timeline h3 {
+  font-size: 1.2em;
+}
+
+.timeline .event {
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .event:before {
+  left: -177.5px;
+  color: #212121;
+  content: attr(data-date);
+  text-align: right;
+  /*  font-weight: 100;*/
+  
+  font-size: 16px;
+  min-width: 120px;
+}
+
+.timeline h3 {
+    font-size: 15px;
+  }
+  .timeline p {
+    padding-top: 10px;
+	font-size: 14px;
+
+  }
+
+.timeline .event:after {
+  box-shadow: 0 0 0 8px #8862ff;
+  left: -30px;
+  background: #ffffff;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: 5px;
+}
+/**/
+/*——————————————
+Responsive Stuff
+———————————————*/
+
+@media (max-width: 945px) {
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+  .timeline h3 {
+    font-size: 16px;
+  }
+  .timeline p {
+    padding-top: 20px;
+  }
+  section.lab h3.card-title {
+    padding: 5px;
+    font-size: 16px
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline .event::before {
+    left: 0.5px;
+    top: 20px;
+    min-width: 0;
+    font-size: 13px;
+  }
+  .timeline .event:nth-child(1)::before,
+  .timeline .event:nth-child(3)::before,
+  .timeline .event:nth-child(5)::before {
+    top: 38px;
+  }
+  .timeline h3 {
+    font-size: 15px;
+  }
+  .timeline p {
+    padding-top: 20px;
+	font-size: 12px;
+
+  }
+}
+/*——————————————
+others
+———————————————*/
+
+a.portfolio-link {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.viewport{
+  position:relative;
+  background: linear-gradient(90deg, #20e6b3, #8e11f3, #4c20d4);
+  background-size: 200% 200%;
+  height: auto;
+  width:100%;
+  -webkit-animation:   AnimationName 10s ease infinite;
+-moz-animation: AnimationName 10s ease infinite;
+animation: AnimationName 10s ease infinite;
+  
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.card p{
+  font-family: "Roboto", sans-serif;
+  margin:0px;
+  color: black;
+  font-weight: 400;
+  font-size:15px;
+  line-height:90%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top:3%;
+  padding-bottom:8%;
+  border-radius:20px;
+  cursor:pointer;
+  transition: ease 1s;
+  -webkit-transition: ease 1s;
+}
+
+.card h3{
+  font-family: "Roboto", sans-serif;
+  margin:0px;
+  color: black;
+  font-weight: 400;
+  font-size:18px;
+  line-height:90%;
+  padding-left: 8%;
+  padding-top:8%;
+  padding-bottom:3%;
+  border-radius:20px;
+  cursor:pointer;
+  transition: ease 1s;
+  -webkit-transition: ease 1s;
+}
+
+
+.title{
+  width:78%;
+  margin:auto;
+  padding-left:0px;
+  padding-bottm:0px;
+}
+
+.cards{
+  width:80%;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom:40px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.card{
+  width:22%;
+  position:relative;
+  background-color:white;
+  margin:1.13%;
+  border-radius:5px;
+  transition: 1s;
+  -webkit-transition:0.5s;
+  cursor:pointer;
+    flex: 1 1 auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 1200px){
+  .card{
+  width:30%;
+  margin:1.6%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .card{
+  width:45%;
+  margin:2.5%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .card{
+  width:98%;
+  margin:2%;
+  }
+}
+
+.card_img{
+  width:100%;
+  height:150px;
+  position:reltive;
+  border-radius: 5px 5px 0px 0px;
+  background-size: cover;
+  background-position:center center; 
+  background-color: #20e6b3;
+  transition:1s;
+  -webkit-transition:1s;
+}
+
+.card1{
+   background-image: url(https://naitsirc.github.io/whatsremoved.png);
+}
+.card2{
+   background-image: url(https://naitsirc.github.io/faicheck.png);
+}
+.card3{
+   background-image: url(https://naitsirc.github.io/now_playing.png);
+}
+.card4{
+   background-image: url(https://naitsirc.github.io/blue.png);
+}
+
+
+.line{
+  height:2px;
+  width:84%;
+  margin:auto;
+  background-color: #dddddd00;
+}
+
+
+.zoomed{
+  width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+.md-chip {
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 32px;
+  font-size: 13px;
+  &.md-chip-hover:hover {
+    background: #ccc;
+  }
+}
+
+.md-chip {
+  height: 32px;
+  line-height: 32px;
+}
+
+.md-chip-grande {
+  height: 48px;
+  line-height: 48px;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: #8862ff;
+  color: #ffffff;
+  padding: 0 12px;
+  border-radius: 48px;
+  font-size: 18px;
+  &.md-chip-hover:hover {
+    background: #ccc;
+  }
+}
+
+.md-chips {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+  padding: 12px 0;
+  .md-chip {
+    margin: 0 5px 3px 0;
+  } 
+}
+
+
+
+
+
+
+
+
+</style></head><body>
+
+<div class="header">
+  <div class="sides">
+    <a href="#" class="logo"></a>
+  </div>
+  <div class="sides"> <a href="#" class="menu">-</a></div>
+  <div class="info">
+  
+    <h1>Cristian Do Carmo</h1>
+	
+
+	
+    <div class="meta">
+      <a  href="https://twitter.com/cristiandroidtr" target="_b" class="author"></a>
+    </div>
+  </div>
+</div>
+<section class="content">
+
+
+<div class="h2texto">Mi nombre es <b>Cristian Do Carmo</b> y soy alumno de Ingeniería Industrial a la vez que redactor para <b>AndroidTR.es</b> y desarrollador "<i>freelance</i>" de aplicaciones Android y cofundador de <b>Development Colors</b>. Las cosas que empezaron como pasatiempos han terminado siendo, junto mis estudios, las actividades que desarrollo.</div>
+
+
+<h2>Ejemplos de trabajo:</h2>
+<div class="cards">
+  
+   <div class="card">  
+   <a href="https://play.google.com/store/apps/details?id=color.dev.com.whatsremoved">
+
+     <div class="card_img card1">
+          
+     </div>
+     <h3>WhatsRemoved</h3>
+     <div class="line">
+     </div>
+     <p> Aplicación para la detección de archivos y mensajes eliminados en multitud de aplicaciones. </p>
+     
+       </a>
+
+   </div>
+   
+
+   <div class="card">
+        <a href="https://play.google.com/store/apps/details?id=color.dev.com.red">
+
+     <div class="card_img card2">
+       
+     </div>
+     <h3>Faicheck</h3>
+     <div class="line">
+     </div>
+    <p> Herramienta de gestión de ficheros no oficial para la Universidad de Vigo</p>
+	</a>
+   </div>
+   
+      <div class="card">
+
+     <a href="https://play.google.com/store/apps/details?id=color.dev.com.white">
+     <div class="card_img card3">
+       
+     </div>
+     <h3>Now Playing Register</h3>
+     <div class="line">
+     </div>
+     <p> Historial para las canciones detectadas por Now Playing</p>
+   </a>   </div>
+
+      <div class="card">
+
+     <a href="https://play.google.com/store/apps/details?id=color.dev.com.blue">
+     <div class="card_img card4">
+       
+     </div>
+     <h3>Blue</h3>
+     <div class="line">
+     </div>
+     <p>Proyecto no presentado de bot conversacional configurable
+	 </a>	 </div>
+
+
+</div>
+ 
+ 
+ 
+
+<h2>Conocimientos y aptitudes:</h2>
+
+<div class="md-chips">
+    <div class="md-chip md-chip-hover">
+      C#
+    </div>
+    <div class="md-chip md-chip-hover">
+      Java
+    </div>
+	<div class="md-chip md-chip-hover">
+      JavaScript
+    </div>
+	<div class="md-chip md-chip-hover">
+      PHP
+    </div>
+	<div class="md-chip md-chip-hover">
+      Visual Basic
+    </div>
+	<div class="md-chip md-chip-hover">
+      HTML
+    </div>
+	<div class="md-chip md-chip-hover">
+      Responsabilidad
+    </div>
+	<div class="md-chip md-chip-hover">
+      Ofimática
+    </div>
+    <div class="md-chip md-chip-hover">
+      Trabajo en equipo
+    </div>
+	<div class="md-chip md-chip-hover">
+      Aprendizaje rápido
+    </div>
+	<div class="md-chip md-chip-hover">
+      Perseverancia
+    </div>
+	<div class="md-chip md-chip-hover">
+      Informática
+    </div>
+	<div class="md-chip md-chip-hover">
+      Sistemas Operativos
+    </div>
+	<div class="md-chip md-chip-hover">
+      Android
+    </div>
+  </div>
+
+  <p></p>
+
+
+
+
+
+
+<!-- TIEMPO -->
+
+<div class="main-container">
+  <section id="timeline" class="timeline-outer">
+    <div class="container" id="content">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <ul class="timeline">
+			<li class="event" data-date="2018">
+              <h3>WhatsRemoved+ alcanza las 100.000 descargas en el Google Play</h3>
+              <p>
+                Con la misma tecnología ya desarrollada y un enfoque diferente creamos WhatsRemoved+ para volver a ofrecer nuestras funciones a los numerosos usuarios.
+              </p>
+            </li>
+			<li class="event" data-date="2018">
+              <h3>WhatsRemoved desaparece del Google Play</h3>
+              <p>
+                En el momento en el que la aplicación era más popular Google Play decide que la aplicación incumple sus normas y procede a su eliminación de la tienda.
+              </p>
+            </li>
+            <li class="event" data-date="2018">
+              <h3>WhatsRemoved alcanza el millón de descargas en el Google Play</h3>
+              <p>
+                Lo que empezó siendo una aplicación más termina haciéndose viral e incluso supera el millón de descargas en su primer año. Un hito que se verá truncado cuando la aplicación desaparece por incumplir las políticas de otras aplicaciones.
+              </p>
+            </li>
+            <li class="event" data-date="2017">
+              <h3>Faicheck para Android</h3>
+              <p>
+                Cansado de los problemas existentes para acceder a los archivos de mi universidad adapto el código de Faicheck, una herramienta no oficial con la que gestionar los ficheros de la universidad, a dispositivos Android.
+              </p>
+            </li>
+			<li class="event" data-date="2017">
+              <h3>Desarrollador "freelance" de aplicaciones Android (Development Colors)</h3>
+              <p>
+                Junto con otro amigo fundo "Development Colors", que produciría éxitos como WhatsRemoved y Now Playing Register.
+              </p>
+            </li>
+			<li class="event" data-date="2017">
+              <h3>Curso de desarrollo de apps Móviles de la Universidad Complutense de Madrid</h3>
+              
+            </li>
+            <li class="event" data-date="2016">
+              <h3>Redactor para AndroidTR.es</h3>
+              <p>Inicialmente colaborador puntual de AndroidTR.es para terminar siendo redactor unos meses después. Poniendo en práctica los conocimientos sobre Android para analizar los últimos avances tecnológicos de las principales compañías. 
+              </p>
+            </li>
+            <li class="event" data-date="2011">
+              <h3>Desarrollador "freelance" de aplicaciones Android (Petra Desarrolladores)</h3>
+              <p>Primera etapa de desarrollo en solitario de aplicaciones Android. Empiezo a programar de forma autodidacta. Dentro de las aplicaciones destacadas, un asistente virtual conversacional y un navegador multipestaña.</p>
+            </li>
+            <li class="event" data-date="2011">
+              <h3>Inicio en la universidad</h3>
+              <p></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br/>
+</div>
+
+
+<div class="md-chips">
+	<a href="http://github.com/naitsirc">
+    <div class="md-chip-grande md-chip-hover">
+      GitHub
+    </div>
+	</a>
+	
+	<a href="https://play.google.com/store/apps/developer?id=Development+Colors">
+    <div class="md-chip-grande md-chip-hover">
+      Google Play
+    </div>
+	</a>
+	
+	<a href="http://androidtr.es">
+    <div class="md-chip-grande md-chip-hover">
+      AndroidTR
+    </div>
+	</a>
+    
+	<a href="https://twitter.com/cristiandroidtr">
+    <div class="md-chip-grande md-chip-hover">
+      Twitter
+    </div>
+	</a>
+	
+	<a href="mailto:deuteriumcristal2@gmail.com">
+    <div class="md-chip-grande md-chip-hover">
+      Correo electrónico
+    </div>
+	</a>
+
+  </div>
+
+
+</section>
+
+<div class="leyenda">© 2018, Cristian Do Carmo Rodríguez, Todos los derechos reservados.</div>
+<div class="leyenda">Google Play y el logotipo de Google Play son marcas comerciales de Google LLC.</div>
+
+</body></html>
